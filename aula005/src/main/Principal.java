@@ -8,6 +8,7 @@ import bridge.Square;
 import composite.File;
 import composite.Folder;
 import decorator.EmailNotifier;
+import decorator.FaxNotifier;
 import decorator.SMSNotifier;
 
 public class Principal {
@@ -33,7 +34,9 @@ public class Principal {
 		
 		// Decorator
 		EmailNotifier en = new EmailNotifier();
+		//FaxNotifier fax = new FaxNotifier();
 		SMSNotifier sms = new SMSNotifier(en);
+
 		sms.send("Email ao público");
 	}
 
